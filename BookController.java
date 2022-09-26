@@ -19,10 +19,6 @@ public class BookController {
     private  String name;
 
 
-
-
-
-
     @PostConstruct
     void init(){
         data.put(1, new Book(id: 1, name: "Domovodstvo"));
