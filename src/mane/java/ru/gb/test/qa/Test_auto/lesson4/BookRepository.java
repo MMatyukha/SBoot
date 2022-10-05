@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface BookRepository extends JpaRepository<BookEntity, Integer> {
-    Optional<BookEntity>findByNameAndid(String Name, int secondName);
+    Optional<BookEntity>findByNameAndid(String Name);
 }
 
 
