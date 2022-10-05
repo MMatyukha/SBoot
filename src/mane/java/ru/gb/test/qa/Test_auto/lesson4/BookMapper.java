@@ -6,5 +6,5 @@ public interface BookMapper {
 
     BookMapper dtoToEntity(Book bookDto);
 
-    Book entityToDto(BookEntity userEntity);
+    Book entityToDto(BookEntity bookEntity);
 }
