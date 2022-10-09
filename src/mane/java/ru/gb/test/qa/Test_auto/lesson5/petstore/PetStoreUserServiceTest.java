@@ -100,25 +100,35 @@ public class PetStoreUserServiceTest {
 
     @Test
 
-    void updateUserTest() {
-        try {
-            Connection connection;
-            try (PreparedStatement preparedStatement = connection
-                    .prepareStatement("update users set firstName=?, lastName=?, email=?", +
-                            "where phone=?")) {
-                preparedStatement.setString(1, user.getfirstName());
-                preparedStatement.setString(2, user.getid());
-                preparedStatement.setString(3, user.lastName());
-                preparedStatement.setString(4, user.email());
-                preparedStatement.setString(5, user.password());
-                preparedStatement.setString(6, user.phone());
-                preparedStatement.setString(7, user.userStatus());
-                preparedStatement.executeUpdate();
-                preparedStatement.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    void updateUserTest() {  
+        
+        //pre-condition - create user
+        PetStoreUserDto userDto = PetStoreUserDto.builder()
+                .firstName("firstName")
+                .id(100)
+                .lastName("lastName")
+                .username("userName")
+                .email("email@email.com")
+                .password("qwerty")
+                .phone("phone")
+                .userStatus(5)
+                .build();
+        
+        //update user
+       requestSpecification
+           id=
+           .body(new UserDTO)
+                .post(/api/users)
+                .then()
+                .statusCode()
+                .assertThat()
+                .body()
+                .exctract()
+                .response()
+                .body()
+                .path();
+        
+        
     }
 
 
