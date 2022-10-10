@@ -74,8 +74,7 @@ public class PetStoreUserServiceTest {
         //post user
         requestSpecification
                 .body(userDto)
-                .post(EndPoints.USER.getUrl())
-                .then()
+                .post(            .then()
                 .log().all()
                 .contentType(ContentType.JSON)
                 .statusCode(HttpStatus.OK.value());
@@ -116,22 +115,18 @@ public class PetStoreUserServiceTest {
         
         //update user
        requestSpecification
-           id=
-           .body(new UserDTO)
-                .post(/api/users)
+                .body(new UserDTO)
+                .post(EndPoints.USER.getUrl())
                 .then()
-                .statusCode()
-                .assertThat()
-                .body()
+                .statusCode(HttpStatus.OK.value())
+                .assertThat(userFromService)
+                .body(userDto)
                 .exctract()
                 .response()
                 .body()
-                .path();
+                .path("id");
         
         
     }
-
-
-
 
 }
