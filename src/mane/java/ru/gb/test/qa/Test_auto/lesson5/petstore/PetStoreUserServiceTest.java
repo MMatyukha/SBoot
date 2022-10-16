@@ -115,7 +115,7 @@ public class PetStoreUserServiceTest {
         
         //update user
        requestSpecification
-                .body(new UserDTO)
+                .body(UserDTO)
                 .post(EndPoints.USER.getUrl())
                 .then()
                 .statusCode(HttpStatus.OK.value())
